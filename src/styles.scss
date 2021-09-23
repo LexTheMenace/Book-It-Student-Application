@@ -1,0 +1,29 @@
+$primary:#4F4FB9;
+$black: #222;
+$white: #f1f1f1;
+@import "bootstrap";
+
+html,
+body,
+input,
+label,
+button,
+a {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+p,
+small,
+span {
+  font-weight: 300;
+}
+
