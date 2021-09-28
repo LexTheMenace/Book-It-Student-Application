@@ -1,10 +1,11 @@
 <div class="container">
-  <app-header></app-header>
+  <app-header (featureSelected)="onNavigate($event)"></app-header>
   <div class="row">
     <div class="col-sm-10">
-        <app-bookshelf></app-bookshelf>
-        <hr/>
-        <app-library></app-library>
+      <hr />
+      <app-bookshelf *ngIf="loadedFeature === 'bookshelf'"></app-bookshelf>
+      <hr />
+      <app-library *ngIf="loadedFeature === 'library'"></app-library>
     </div>
   </div>
 </div>
