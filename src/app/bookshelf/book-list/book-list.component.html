@@ -1,9 +1,11 @@
+
 <div class="row mb-3">
   <div class="col-md-12">
     <app-book *ngFor="let bookEl of myBooks" [book]="bookEl" (click)="onBookSelected(bookEl)"></app-book>
   </div>
 </div>
 <hr />
+
 <div class="row">
   <div class="col-md-12">
     <button class="btn btn-primary">Add New Book</button>

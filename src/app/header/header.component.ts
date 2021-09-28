@@ -1,3 +1,4 @@
+
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 @Component({
   selector: "app-header",
@@ -16,3 +17,4 @@ export class HeaderComponent implements OnInit {
     this.featureSelected.emit(feature);
   }
 }
+

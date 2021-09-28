@@ -1,5 +1,7 @@
+
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BOOK_DATA } from 'bookData';
+
 import { Book } from 'src/app/shared/book/Book.model';
 
 @Component({

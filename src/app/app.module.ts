@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BookshelfComponent } from './bookshelf/bookshelf.component';
+
 import { BookDetailsComponent } from './bookshelf/book-details/book-details.component';
 import { BookListComponent } from './bookshelf/book-list/book-list.component';
 import { BookComponent } from './shared/book/book.component';
@@ -22,6 +23,7 @@ import { BookResultsComponent } from './library/book-results/book-results.compon
     LibraryComponent,
     BookSearchComponent,
     BookResultsComponent
+
   ],
   imports: [
     BrowserModule
