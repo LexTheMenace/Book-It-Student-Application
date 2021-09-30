@@ -2,7 +2,6 @@
 
   <div class="col-md-6">
     <app-book-list (bookWasSelected)="selectedBook=$event"></app-book-list>
-    <button class="btn btn-primary">Add New Book</button>
   </div>
   <div class="col-md-6">
     <app-book-details *ngIf="selectedBook; else infoText" [book]="selectedBook"></app-book-details>
