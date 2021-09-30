@@ -21,15 +21,15 @@
 
 <div class="row">
   <div class="col-md-12">
-    <img [src]="book.coverImagePath" [alt]="book.title" class="img-responsive" style="max-height: 400px;"/>
+    <img [src]="book.coverImagePath" [alt]="book.title" class="img-responsive" />
   </div>
 </div>
 <br/>
-<div class="dropdown mb-5" appDropdown #dropdown='appDropdown'>
+<div class="dropdown" appDropdown #d="appDropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Manage Book
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [ngClass]="{show: dropdown.isShow}">
+  <div [ngClass]="{show: d.isOpen}" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Edit Book</a>
     <a class="dropdown-item" href="#">Delete Book</a>
   </div>

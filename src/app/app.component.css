@@ -1,0 +1,10 @@
+.container {
+  padding: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .app-row {
+    padding: 0.75em 1.25em;
+  }
+}

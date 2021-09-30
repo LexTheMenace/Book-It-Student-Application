@@ -10,7 +10,7 @@ import { Book } from 'src/app/shared/book/Book.model';
 })
 export class BookDetailsComponent implements OnInit {
 
-  @Input() book:Book;
+@Input() book:Book;
 
   constructor() { }
 

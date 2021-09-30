@@ -11,8 +11,8 @@ import { BookComponent } from './shared/book/book.component';
 import { LibraryComponent } from './library/library.component';
 import { BookSearchComponent } from './library/book-search/book-search.component';
 import { BookResultsComponent } from './library/book-results/book-results.component';
-import { DropdownDirective } from './shared/book/dropdown.directive';
-import { HoverDirective } from './shared/hover.directive';
+import { DropdownDirective } from './dropdown.directive';
+import { HoverDirective } from './hover.directive';
 
 @NgModule({
   declarations: [
