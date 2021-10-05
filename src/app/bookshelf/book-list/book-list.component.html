@@ -1,9 +1,24 @@
-
 <h2>My Books</h2>
-<hr/>
+<hr />
 <div class="row mb-3">
-  <div class="col-md-12">
-    <app-book *ngFor="let bookEl of myBooks" [book]="bookEl" (click)="onBookSelected(bookEl)"></app-book>
+  <div class="col-md-12" *ngFor="let bookEl of myBooks; let i = index">
+    <app-book
+      
+      [book]="bookEl"
+      (click)="onBookSelected(bookEl)"
+    ></app-book>
+    
+    <button
+      style="
+        font-size: 16px;
+        background-color: transparent;
+        border: none;
+        float: right;
+      "
+      (click)="onRemoveBook(i)"
+    >
+      -
+    </button>
   </div>
 </div>
 <hr />

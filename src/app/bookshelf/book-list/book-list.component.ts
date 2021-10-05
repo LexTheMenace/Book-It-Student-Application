@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { BOOK_DATA } from 'bookData';
 
 import { Book } from 'src/app/shared/book/Book.model';
+import { BookshelfService } from '../bookshelf.service';
 
 @Component({
   selector: 'app-book-list',
@@ -11,14 +12,16 @@ import { Book } from 'src/app/shared/book/Book.model';
 })
 export class BookListComponent implements OnInit {
   myBooks: Book[] = BOOK_DATA;
-  @Output() bookWasSelected = new EventEmitter<Book>();
-  constructor() { }
+  constructor(private _bookshelfService:BookshelfService) { }
 
   ngOnInit(): void {
-    console.log(this.myBooks);
-
+    this.myBooks = this._bookshelfService.myBooks;
   }
   onBookSelected(book:Book){
-    this.bookWasSelected.emit(book);
+    this._bookshelfService.bookWasSelected.emit(book);
+  }
+
+  onRemoveBook(i:number){
+    this._bookshelfService.removeBook(i);
   }
 }
