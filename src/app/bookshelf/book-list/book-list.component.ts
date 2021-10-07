@@ -11,14 +11,11 @@ import { BookshelfService } from '../bookshelf.service';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  myBooks: Book[] = BOOK_DATA;
+  myBooks: Book[];
   constructor(private _bookshelfService:BookshelfService) { }
 
   ngOnInit(): void {
     this.myBooks = this._bookshelfService.myBooks;
-  }
-  onBookSelected(book:Book){
-    this._bookshelfService.bookWasSelected.emit(book);
   }
 
   onRemoveBook(i:number){

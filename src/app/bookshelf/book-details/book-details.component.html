@@ -1,6 +1,5 @@
-
 <h2>Book Details</h2>
-<hr/>
+<hr />
 <div class="row">
   <div class="col-md-12">
     <h2>{{ book.title }}</h2>
@@ -21,16 +20,32 @@
 
 <div class="row">
   <div class="col-md-12">
-    <img [src]="book.coverImagePath" [alt]="book.title" class="img-responsive" style="max-height: 400px;"/>
+    <img
+      [src]="book.coverImagePath"
+      [alt]="book.title"
+      class="img-responsive"
+      style="max-height: 400px"
+    />
   </div>
 </div>
-<br/>
-<div class="dropdown mb-5" appDropdown #dropdown='appDropdown'>
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<br />
+<div class="dropdown mb-5" appDropdown #dropdown="appDropdown">
+  <button
+    class="btn btn-primary dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
     Manage Book
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [ngClass]="{show: dropdown.isShow}">
-    <a class="dropdown-item" href="#">Edit Book</a>
-    <a class="dropdown-item" href="#">Delete Book</a>
+  <div
+    class="dropdown-menu"
+    aria-labelledby="dropdownMenuButton"
+    [ngClass]="{ show: dropdown.isShow }"
+  >
+    <a class="dropdown-item" (click)="onEdit()" >Edit Book</a>
+    <a class="dropdown-item">Delete Book</a>
   </div>
 </div>
