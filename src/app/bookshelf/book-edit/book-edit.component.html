@@ -1,2 +1,72 @@
-<p *ngIf="isEditMode">book-edit works!</p>
-<p *ngIf="!isEditMode">book-add works!</p>
+<!-- todo list -->
+
+<!-- update the book model, include the price property [X]-->
+<!-- create a reactive form ih book-edit.component.html file [X]-->
+<!-- set up that form in the typescript file []-->
+
+<!-- title, author, price, genre, coverImagePath -->
+
+<!-- todo list -->
+<!-- submit configuration [X]-->
+<!-- set up each input element []-->
+
+<!-- this.bookForm = new FormGroup({
+    title: new FormControl(title),
+    author: new FormControl(author),
+    genre: new FormControl(genre),
+    price: new FormControl(price),
+    coverImagePath: new FormControl(coverImagePath)
+  }) -->
+
+  <h2>{{isEditMode ? "Edit Book" : "Add new book"}}</h2>
+<form class="form-group" (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+  <label>Title:</label>
+  <input
+    class="form-control"
+    id="title"
+    name="title"
+    type="text"
+    formControlName="title"
+  />
+  <label>Author:</label>
+  <input
+    class="form-control"
+    id="author"
+    name="author"
+    type="text"
+    formControlName="author"
+  />
+  <label>Price:</label>
+  <input
+    class="form-control"
+    id="price"
+    name="price"
+    type="number"
+    formControlName="price"
+  />
+  <label>Genre:</label>
+  <select class="form-control" formControlName="genre">
+    <option value="Mystery">Mystery</option>
+    <option value="Science">Science</option>
+    <option value="Fiction">Fiction</option>
+    <option value="Non-fiction">Non-Fction</option>
+  </select>
+  <label>coverImagePath:</label>
+  <input
+    class="form-control"
+    id="coverImagePath"
+    name="coverImagePath"
+    type="text"
+    formControlName="coverImagePath"
+  />
+  <div style="margin-top: 10px">
+    <button
+      type="submit"
+      class="btn btn-success mr-5"
+      [disabled]="bookForm.invalid"
+    >
+      {{isEditMode ? "Save Book" : "Add new book"}}
+    </button>
+    <button class="btn btn-light" (click)="onCancel()">Cancel</button>
+  </div>
+</form>

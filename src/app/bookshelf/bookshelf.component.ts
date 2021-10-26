@@ -11,13 +11,10 @@ import { BookshelfService } from './bookshelf.service';
 })
 
 export class BookshelfComponent implements OnInit {
-  selectedBook: Book;
-  constructor(private _bookshelfService:BookshelfService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this._bookshelfService.bookWasSelected.subscribe((book:Book)=>{
-      this.selectedBook = book;
-    })
+
   }
 
 

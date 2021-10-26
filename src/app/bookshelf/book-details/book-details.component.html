@@ -14,6 +14,13 @@
 
 <div class="row">
   <div class="col-md-12">
+    <h4>{{ book.price | currency:"EUR"}}</h4>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
     <p>{{ book.genre }}</p>
   </div>
 </div>
@@ -46,6 +53,6 @@
     [ngClass]="{ show: dropdown.isShow }"
   >
     <a class="dropdown-item" (click)="onEdit()" >Edit Book</a>
-    <a class="dropdown-item">Delete Book</a>
+    <a class="dropdown-item" (click)="onDelete()">Delete Book</a>
   </div>
 </div>

@@ -15,7 +15,11 @@ export class BookListComponent implements OnInit {
   constructor(private _bookshelfService:BookshelfService) { }
 
   ngOnInit(): void {
-    this.myBooks = this._bookshelfService.myBooks;
+    this.myBooks = this._bookshelfService.getBooks();
+
+    this._bookshelfService.booksSubject.subscribe(books=>{
+      this.myBooks = books;
+    })
   }
 
   onRemoveBook(i:number){
