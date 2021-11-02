@@ -5,7 +5,7 @@ import { Book } from '../shared/book/Book.model';
 
 @Injectable({ providedIn: 'root' })
 export class BookshelfService {
-  private myBooks: Book[] = [
+  /* private myBooks: Book[] = [
     {
       title: 'Coding Catastrophe',
       author: 'Sir Code-A-Lot',
@@ -27,13 +27,19 @@ export class BookshelfService {
       coverImagePath: 'https://source.unsplash.com/500x500/?trees',
       price: 9.99
     },
-  ];
+  ]; */
 
+  private myBooks: Book[] = [];
 
   booksSubject = new Subject<Book[]>();
 
   getBooks(){
     return this.myBooks.slice();
+  }
+
+  setBooks(books: Book[]){
+    this.myBooks = books;
+    this.booksSubject.next(this.getBooks())
   }
   addBook(book: Book) {
     this.myBooks.push(book);
