@@ -38,9 +38,11 @@
           >Logout</a
         >
       </li>
-      <li class="nav-item dropdown" *ngIf="isAuthenticated" >
+      <li class="nav-item dropdown"
+      (click)="show = !show"
+      
+      *ngIf="isAuthenticated" >
         <a
-          (click)="show = !show"
           [ngClass]="{ show: show }"
           class="nav-link dropdown-toggle"
 

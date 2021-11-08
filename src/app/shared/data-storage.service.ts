@@ -14,19 +14,15 @@ export class DataStorageService {
 
   saveBooks(){
    const books = this.bookshelfService.getBooks();
+   if(!books)return;
    this.http.put(this.bookApiUrl, books).subscribe(
     res => console.log(res)
    )
   }
 
   fetchBooks(){
-
-        return this.http.get<Book[]>(this.bookApiUrl).pipe(
-          tap(books => this.bookshelfService.setBooks(books))
-        )
-
-
-
-
+    return this.http.get<Book[]>(this.bookApiUrl).pipe(
+      tap(books => this.bookshelfService.setBooks(books))
+    )
   }
 }
