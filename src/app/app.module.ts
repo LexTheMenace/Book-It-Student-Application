@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {  HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -18,28 +18,26 @@ import { HoverDirective } from './shared/hover.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { BookshelfHomeComponent } from './bookshelf/bookshelf-home/bookshelf-home.component';
 import { BookEditComponent } from './bookshelf/book-edit/book-edit.component';
-import { AuthComponent } from './auth/auth.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    BookshelfComponent,
-    BookDetailsComponent,
-    BookListComponent,
-    BookComponent,
-    LibraryComponent,
-    BookSearchComponent,
-    BookResultsComponent,
-    DropdownDirective,
-    HoverDirective,
-    BookshelfHomeComponent,
-    BookEditComponent,
-    AuthComponent,
+  declarations: [AppComponent, HeaderComponent, ],
+  imports: [
+    SharedModule,
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

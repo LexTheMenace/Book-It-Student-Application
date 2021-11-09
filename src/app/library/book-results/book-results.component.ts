@@ -15,7 +15,7 @@ import { LibraryService } from '../library.service';
 export class BookResultsComponent implements OnInit {
   myBooks: Observable<Book[]>;
   loading: Observable<boolean>;
-
+  alert:string = null;
   constructor(
     private _libraryService: LibraryService,
     private _bookshelfService: BookshelfService
@@ -27,5 +27,9 @@ export class BookResultsComponent implements OnInit {
   }
   onAddBook(book: Book) {
     this._bookshelfService.addBook(book);
+    this.alert = "You added " + book.title + " by " + book.author;
+    setTimeout(()=>{
+      this.alert = null;
+    }, 2000)
   }
 }

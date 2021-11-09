@@ -30,7 +30,7 @@ export class BookshelfService {
   ]; */
 
   private myBooks: Book[] = [];
-
+  bookSelected = new Subject<Book>();
   booksSubject = new Subject<Book[]>();
 
   getBooks(){
@@ -48,6 +48,7 @@ export class BookshelfService {
   }
 
   removeBook(i: number) {
+    this.bookSelected.next(this.myBooks[i])
     this.myBooks.splice(i, 1);
     this.booksSubject.next(this.getBooks())
   }
